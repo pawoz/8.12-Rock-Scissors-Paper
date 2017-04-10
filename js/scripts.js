@@ -1,9 +1,8 @@
-var maxScore = 5;
+var maxScore = 2;
 
 //newGameButtonListener
 var newGameBtn = document.getElementById('js-newGameButton');
 newGameBtn.addEventListener('click', newGame);
-function newGame(){};
 
 // pickButtonListener
 var pickRock = document.getElementById('js-playerPick_rock'),
@@ -42,6 +41,10 @@ function setGameElements() {
 			newGameElem.style.display = 'none';
 			pickElem.style.display = 'block';
 			resultsElem.style.display = 'block';
+			playerPickElem.innerText = 'Player\'s pick';
+			playerResultElem.innerText = 'Player\'s score';
+			computerPickElem.innerText = 'Computer\'s pick';
+			computerResultElem.innerText = 'Computer\'s score';
 			break;
 		case 'ended':
 			newGameBtn.innerText = 'Again';
@@ -69,11 +72,6 @@ function newGame() {
 		setGamePoints();
 	}
 };
-
-//playerPick
-function playerPick(playerPick) {
-	console.log(playerPick);
-}
 
 //computerPick
 function getComputerPick() {
